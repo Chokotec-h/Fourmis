@@ -1,0 +1,42 @@
+20 20 2
+. . . . . . o . . . . . . o . . . . . .
+ . . . # # # # # # 4 # # # # # # . . . .
+. . . . # 9 o 9 # 4 4 # 9 o 9 # . . . . 
+ . . . # # # # # # 4 # # # # # # . . . .
+. . . . . . o . . . . . . o . . . . . . 
+ . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . 
+ . . . . . . . . . 9 9 . . . . . . . . .
+. . o . . . . . . 9 9 9 . . . . . o . . 
+ . . . . . . . . 9 9 9 9 . . . . . . . .
+. . . . . . . . . 9 9 9 . . . . . . . . 
+ . . . . . . . . . 9 9 . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . 
+ . . . . . . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . . . . . . 
+ . . . . . . o . . . . . . o . . . . . .
+. . . . # # # # # # 4 # # # # # # . . . 
+ . . . . # 9 o 9 # 4 4 # 9 o 9 # . . . .
+. . . . # # # # # # 4 # # # # # # . . . 
+ . . . . . . o . . . . . . o . . . . . .
+x x x x x x x . . . . . . x x x x x x x
+ x x x x x x . 9 9 9 9 9 . x x x x x x x
+x x x x x x x . . . . . . x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x . . 9 . . x x x x x x x x
+x a a a x x x x . # # . x x x x b b b x 
+ a a a a x x x . 9 # 9 . x x x b b b b x
+a a a a a x x . 9 # # 9 . x x b b b b b 
+ a a a a x x x . 9 # 9 . x x x b b b b x
+x a a a x x x x . # # . x x x x b b b x 
+ x x x x x x x . . 9 . . x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x x x x x x x x x x x x x x
+x x x x x x x x x x x x x x x x x x x x
+ x x x x x x x . . . . . . x x x x x x x
+x x x x x x x . 9 9 9 9 9 . x x x x x x 
+ x x x x x x x . . . . . . x x x x x x x
+

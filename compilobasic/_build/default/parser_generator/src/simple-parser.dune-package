@@ -1,0 +1,106 @@
+(lang dune 3.12)
+(name simple-parser)
+(sections (lib .) (libexec .) (doc ../../doc/simple-parser))
+(files
+ (lib
+  (META
+   ast.ml
+   ast.mli
+   dune-package
+   generator.ml
+   generator.mli
+   grammar.ml
+   grammar.mli
+   lexer.ml
+   lexer.mli
+   opam
+   parseTable.ml
+   parseTable.mli
+   parser.ml
+   parser.mli
+   simpleParser.a
+   simpleParser.cma
+   simpleParser.cmi
+   simpleParser.cmt
+   simpleParser.cmx
+   simpleParser.cmxa
+   simpleParser.ml
+   simpleParser__Ast.cmi
+   simpleParser__Ast.cmt
+   simpleParser__Ast.cmti
+   simpleParser__Ast.cmx
+   simpleParser__Generator.cmi
+   simpleParser__Generator.cmt
+   simpleParser__Generator.cmti
+   simpleParser__Generator.cmx
+   simpleParser__Grammar.cmi
+   simpleParser__Grammar.cmt
+   simpleParser__Grammar.cmti
+   simpleParser__Grammar.cmx
+   simpleParser__Lexer.cmi
+   simpleParser__Lexer.cmt
+   simpleParser__Lexer.cmti
+   simpleParser__Lexer.cmx
+   simpleParser__ParseTable.cmi
+   simpleParser__ParseTable.cmt
+   simpleParser__ParseTable.cmti
+   simpleParser__ParseTable.cmx
+   simpleParser__Parser.cmi
+   simpleParser__Parser.cmt
+   simpleParser__Parser.cmti
+   simpleParser__Parser.cmx))
+ (libexec (simpleParser.cmxs))
+ (doc (README.md)))
+(library
+ (name simple-parser)
+ (kind normal)
+ (archives (byte simpleParser.cma) (native simpleParser.cmxa))
+ (plugins (byte simpleParser.cma) (native simpleParser.cmxs))
+ (native_archives simpleParser.a)
+ (requires unicode code-map)
+ (main_module_name SimpleParser)
+ (modes byte native)
+ (modules
+  (wrapped
+   (group
+    (alias
+     (obj_name simpleParser)
+     (visibility public)
+     (kind alias)
+     (source (path SimpleParser) (impl (path simpleParser.ml-gen))))
+    (name SimpleParser)
+    (modules
+     (module
+      (obj_name simpleParser__Ast)
+      (visibility public)
+      (source (path Ast) (intf (path ast.mli)) (impl (path ast.ml))))
+     (module
+      (obj_name simpleParser__Generator)
+      (visibility public)
+      (source
+       (path Generator)
+       (intf (path generator.mli))
+       (impl (path generator.ml))))
+     (module
+      (obj_name simpleParser__Grammar)
+      (visibility public)
+      (source
+       (path Grammar)
+       (intf (path grammar.mli))
+       (impl (path grammar.ml))))
+     (module
+      (obj_name simpleParser__Lexer)
+      (visibility public)
+      (source (path Lexer) (intf (path lexer.mli)) (impl (path lexer.ml))))
+     (module
+      (obj_name simpleParser__ParseTable)
+      (visibility public)
+      (source
+       (path ParseTable)
+       (intf (path parseTable.mli))
+       (impl (path parseTable.ml))))
+     (module
+      (obj_name simpleParser__Parser)
+      (visibility public)
+      (source (path Parser) (intf (path parser.mli)) (impl (path parser.ml))))))
+   (wrapped true))))

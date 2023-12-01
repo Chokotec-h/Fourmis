@@ -1,0 +1,10 @@
+lib: [
+  "_build/install/default/lib/antsc/META"
+  "_build/install/default/lib/antsc/dune-package"
+]
+bin: [
+  "_build/install/default/bin/antsc"
+]
+doc: [
+  "_build/install/default/doc/antsc/README.md"
+]

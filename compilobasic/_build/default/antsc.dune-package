@@ -1,4 +1,4 @@
-(lang dune 3.11)
+(lang dune 3.12)
 (name antsc)
 (sections (lib .) (bin ../../bin) (doc ../../doc/antsc))
 (files (lib (META dune-package)) (bin (antsc)) (doc (README.md)))

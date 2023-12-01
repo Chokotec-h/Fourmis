@@ -1,0 +1,11 @@
+lib: [
+  "_build/install/default/lib/simple-parser-test/META"
+  "_build/install/default/lib/simple-parser-test/dune-package"
+  "_build/install/default/lib/simple-parser-test/opam"
+]
+bin: [
+  "_build/install/default/bin/simple-parser-gen"
+]
+doc: [
+  "_build/install/default/doc/simple-parser-test/README.md"
+]

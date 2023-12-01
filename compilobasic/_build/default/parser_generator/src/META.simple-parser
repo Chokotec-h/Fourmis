@@ -1,0 +1,6 @@
+description = ""
+requires = "code-map unicode"
+archive(byte) = "simpleParser.cma"
+archive(native) = "simpleParser.cmxa"
+plugin(byte) = "simpleParser.cma"
+plugin(native) = "simpleParser.cmxs"
