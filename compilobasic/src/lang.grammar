@@ -1,0 +1,64 @@
+type command =
+	| Nope 				nop
+	| Move				move
+	| MoveUp			moveup
+	| MoveDown			movedown
+	| Dig				dig
+	| Fill 				fill
+	| DigUp				digup
+	| DigDown			digdown
+	| FillUp			fillup
+	| FillDown			filldown
+	| Grab				grab
+	| Attack			attack
+	| Turn				turn <lr>
+	| Pickup			pickup
+	| Mark 				mark <int>
+	| Unmark			unmark <int>
+	| Drop				drop
+
+type expression =
+	| Do 				<command>
+	| MoveElse  		moveelse {<expression+;>}
+	| PickElse  		pickelse {<expression+;>}
+	| While				while (<condition>) do {<expression+;>}
+
+type condition =
+	| Eq				= <direction> <valeur>
+	| Neq				!= <direction> <valeur>
+	| Random			random <int>
+	| True				true
+
+type lr =
+	| TurnL				left
+	| TurnR				right
+
+type valeur = 
+	| Friend            friend
+	| Enemy             enemy
+	| Grabbed           grabbed
+	| FriendWithFood    friendwithfood
+	| EnemyWithFood     enemywithfood
+	| Food              food
+	| Rock              rock
+	| Empty             empty
+	| Underground       underground
+	| Surface           surface
+	| HoleAbove         holeabove
+	| HoleBelow         holebelow
+	| Marker         	marker <int>
+	| EnemyMarker       enemymarker
+	| Home              home
+	| EnemyHome         enemyhome
+
+type direction =
+	| Here				here
+	| LeftAhead			leftahead
+	| RightAhead		rightahead
+	| Ahead				ahead
+	| Above             above
+	| Below             below
+
+
+type program =
+	| Program 		<expression+;>

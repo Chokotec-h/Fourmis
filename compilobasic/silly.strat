@@ -1,0 +1,10 @@
+while (!= here surface) do {
+	digup;
+	moveup
+};
+while (true) do {
+	while (random 6) do {
+		turn left
+	};
+	move
+}
