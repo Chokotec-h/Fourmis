@@ -1,0 +1,76 @@
+debut:
+    DigUp loop
+    MoveUp loop
+    Roll 2 down loop
+
+down:
+    MoveDown loop
+    Goto loop
+
+loop:
+    Goto seek
+    Sense Ahead carry seek Food
+
+move:
+    Sense Ahead step uturn Empty
+step:
+    Move loop
+    Goto loop
+
+uturn:
+    Sense Ahead back loop Rock
+back:
+    TurnRight
+    TurnRight
+    TurnRight
+
+seekr:
+    TurnRight
+    Sense Ahead grabr seekl Enemy
+
+grabr:
+    Grab left
+    TurnLeft
+    Goto tightr
+left:
+    TurnLeft
+    Goto tightr
+
+seekl:
+    TurnLeft
+    Sense Ahead grabl tightr Enemy
+
+grabl:
+    TurnLeft
+    Grab right
+    TurnRight
+    Goto tightr
+
+right:
+    TurnRight
+    Goto tightr
+
+seek:
+    Sense Ahead kill seekr Grabbed
+
+kill:
+    Attack seekr
+    Goto seekr
+
+tightr:
+    Sense RightAhead move tightl Friend
+
+tightl:
+    Sense LeftAhead move seek Friend
+
+
+carry:
+    Sense Here peek move Food
+
+peek:
+    PickUp loop
+    TurnRight
+    TurnRight
+    TurnRight
+    Goto move
+

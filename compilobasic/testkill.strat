@@ -1,0 +1,9 @@
+while (true) do {
+    while (= ahead enemy) do {
+        grab
+    };
+    turn left;
+    while (true) do {
+        attack
+    }
+}

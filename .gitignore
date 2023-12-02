@@ -1,2 +1,5 @@
-/mechants-main/target
-/compilobasic/_build
+mechants-main/target
+compilobasic/_build
+*.cmti
+*.cmi
+*.cmx

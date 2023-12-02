@@ -1,0 +1,13 @@
+debut:
+    Sense LeftAhead grab kill Enemy
+
+kill:
+    Sense Ahead ded debut Grabbed
+
+ded:
+    Attack debut
+    Goto debut
+
+grab:
+    Grab debut
+    Goto debut

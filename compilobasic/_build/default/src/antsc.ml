@@ -148,7 +148,7 @@ let comp_command (commande: Ast.command) (oc: out_channel) : unit =
                 fprintf oc "  Grab label_%d\n  Goto label_%d\nlabel_%d:\n" !i !i !i;
                 incr i
         | Ast.Attack ->
-                fprintf oc "  MoveUp label_%d\n  Goto label_%d\nlabel_%d:\n" !i !i !i;
+                fprintf oc "  Attack label_%d\n  Goto label_%d\nlabel_%d:\n" !i !i !i;
                 incr i
 
 (* Compile une condition. [c] représente le numéro de label

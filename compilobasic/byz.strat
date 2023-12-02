@@ -1,0 +1,49 @@
+while (true) do {
+    if (= leftahead friend) then {
+        ifs (!= ahead empty) then {
+            dig
+        };
+        move
+    }
+    else {
+        if (= rightahead friend) then {
+            ifs (!= ahead empty) then {
+                dig
+            };
+            move
+        }
+        else {
+            if (!= ahead empty) then {
+                if (= leftahead empty) then {
+                    turn left;
+                    moveelse {turn right};
+                    turn right
+                }
+                else {
+                    if (= rightahead empty) then {
+                        turn right;
+                        moveelse {turn left};
+                        turn left
+                    }
+                    else {
+                        dig;
+                        moveelse {
+                            turn left;
+                            turn left;
+                            turn left;
+                            move;
+                            turn left;
+                            turn left;
+                            turn left
+                        }
+                    }
+                }
+            }
+            else {
+                ifs (= leftahead rock) then {
+                    move
+                }
+            }
+        }
+    }
+}
