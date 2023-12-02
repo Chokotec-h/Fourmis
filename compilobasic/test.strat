@@ -1,33 +1,31 @@
 
 
 while (true) do {
-    ifs (= ahead friend) then
-    {
-        move
-    };
+
     if (= leftahead friend) then
     {
-        move
-    }
-    else
-    {
+        move;
         turn left
-    };
-    if (= rightahead friend) then
-    {
-        move
     }
     else
     {
-        turn right
+        ifs (= rightahead friend) then
+        {
+            move;
+            turn right
+        }
     };
 
 
 
     ifs (= here food) then
     {
-        pickup
+        ifs(!= here home) then
+        {
+            pickup
+        }
     };
+    
     ifs (= here home) then
     {
         drop
