@@ -40,6 +40,7 @@ and expression =
   | While of (condition Span.located) * (expression Span.located list Span.located)
   | If of (condition Span.located) * (expression Span.located list Span.located) * (expression Span.located list Span.located)
   | Ifs of (condition Span.located) * (expression Span.located list Span.located)
+  | For of (int Span.located) * (expression Span.located list Span.located)
 
 and lr = 
   | TurnL

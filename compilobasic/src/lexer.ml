@@ -23,6 +23,7 @@ module Keyword = struct
     | Filldown 
     | Fillup 
     | Food 
+    | For 
     | Friend 
     | Friendwithfood 
     | Grab 
@@ -76,6 +77,7 @@ module Keyword = struct
     | Filldown -> Printf.fprintf fmt "filldown" 
     | Fillup -> Printf.fprintf fmt "fillup" 
     | Food -> Printf.fprintf fmt "food" 
+    | For -> Printf.fprintf fmt "for" 
     | Friend -> Printf.fprintf fmt "friend" 
     | Friendwithfood -> Printf.fprintf fmt "friendwithfood" 
     | Grab -> Printf.fprintf fmt "grab" 
@@ -174,6 +176,7 @@ let keyword_opt str =
   | "filldown" -> Some (Keyword Keyword.Filldown)
   | "fillup" -> Some (Keyword Keyword.Fillup)
   | "food" -> Some (Keyword Keyword.Food)
+  | "for" -> Some (Keyword Keyword.For)
   | "friend" -> Some (Keyword Keyword.Friend)
   | "friendwithfood" -> Some (Keyword Keyword.Friendwithfood)
   | "grab" -> Some (Keyword Keyword.Grab)

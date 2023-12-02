@@ -257,7 +257,10 @@ let rec comp_expression (exp: Ast.expression) (oc: out_channel) : unit =
             fprintf oc "  Goto label_%d\n" (c+2);
             (* label de sorti c+3*)
             fprintf oc "label_%d:\n" (c+2)
-
+        | Ast.For((i,_),(expr,_)) ->
+            for _ = 0 to i do
+              comp_many_expr expr;
+            done 
 (* Compile un programme *)
 let comp_program (program: Ast.program) (oc: out_channel) : unit =
     match program with

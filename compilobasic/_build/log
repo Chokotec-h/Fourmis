@@ -21,7 +21,7 @@
 #        }
 #  ; instrument_with = []
 #  }
-$ /home/alandjaro/.opam/petitnom/bin/ocamlc.opt -config > /tmp/dune_179a0d_output
+$ /home/alandjaro/.opam/petitnom/bin/ocamlc.opt -config > /tmp/dune_bbe5de_output
 $ (cd _build/default && /home/alandjaro/.opam/petitnom/bin/ocamldep.opt -modules -impl src/antsc.ml) > _build/default/src/.antsc.eobjs/antsc.impl.d
 $ (cd _build/default && /home/alandjaro/.opam/petitnom/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -a+31 -g -bin-annot -I src/.antsc.eobjs/byte -I /home/alandjaro/.opam/petitnom/lib/code-map -I /home/alandjaro/.opam/petitnom/lib/ocaml/str -I /home/alandjaro/.opam/petitnom/lib/unicode -no-alias-deps -opaque -o src/.antsc.eobjs/byte/antsc.cmo -c -impl src/antsc.ml)
 $ (cd _build/default && /home/alandjaro/.opam/petitnom/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -warn-error -a+31 -g -I src/.antsc.eobjs/byte -I src/.antsc.eobjs/native -I /home/alandjaro/.opam/petitnom/lib/code-map -I /home/alandjaro/.opam/petitnom/lib/ocaml/str -I /home/alandjaro/.opam/petitnom/lib/unicode -intf-suffix .ml -no-alias-deps -opaque -o src/.antsc.eobjs/native/antsc.cmx -c -impl src/antsc.ml)
