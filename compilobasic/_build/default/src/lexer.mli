@@ -12,6 +12,7 @@ module Keyword : sig
     | Digup 
     | Do 
     | Drop 
+    | Else 
     | Empty 
     | Enemy 
     | Enemyhome 
@@ -29,6 +30,7 @@ module Keyword : sig
     | Holeabove 
     | Holebelow 
     | Home 
+    | If 
     | Left 
     | Leftahead 
     | Mark 
@@ -45,6 +47,7 @@ module Keyword : sig
     | Rightahead 
     | Rock 
     | Surface 
+    | Then 
     | True 
     | Turn 
     | Underground 

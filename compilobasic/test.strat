@@ -1,15 +1,12 @@
-grab_ahead:
-    grab
 
-grab_left:
-    turnleft;
-    grab
-
-grab_right:
-    turnright;
-    grab
 
 while (true) do {
-    move;
-    sense ahead grab_ahead
+    if (!= ahead holeabove) then {
+        digup
+    }
+    else
+    {
+        moveup;
+        movedown
+    }
 }
