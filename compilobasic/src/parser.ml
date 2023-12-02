@@ -214,6 +214,37 @@ and parse_nt_expression span lexer =
       | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
     end
 
+  | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Ifs, _), _)  -> 
+    begin match consume span lexer with 
+      | (Lexer.Keyword Lexer.Keyword.Ifs, _), span, lexer -> 
+        begin match consume span lexer with 
+          | (Lexer.Begin '(', _), span, lexer -> 
+            let arg0, lexer = parse_nt_condition (Span.next span) lexer in 
+            let span = Span.union span (snd arg0) in 
+            begin match consume span lexer with 
+              | (Lexer.End ')', _), span, lexer -> 
+                begin match consume span lexer with 
+                  | (Lexer.Keyword Lexer.Keyword.Then, _), span, lexer -> 
+                    begin match consume span lexer with 
+                      | (Lexer.Begin '{', _), span, lexer -> 
+                        let arg1, lexer = non_empty_iter_parse_nt_expression (Lexer.Operator ";") (Span.next span) lexer in 
+                        let span = Span.union span (snd arg1) in 
+                        begin match consume span lexer with 
+                          | (Lexer.End '}', _), span, lexer -> 
+                            (Ast.Ifs (arg0, arg1), span), lexer
+                          | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
+                        end
+                      | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
+                    end
+                  | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
+                end
+              | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
+            end
+          | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
+        end
+      | (token, token_span), _, _ -> raise (Error (UnexpectedToken token, token_span))
+    end
+
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Moveelse, _), _)  -> 
     begin match consume span lexer with 
       | (Lexer.Keyword Lexer.Keyword.Moveelse, _), span, lexer -> 
@@ -518,6 +549,7 @@ and parse_nt_program span lexer =
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Movedown, _), _) 
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Move, _), _) 
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Mark, _), _) 
+  | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Ifs, _), _) 
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.If, _), _) 
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Grab, _), _) 
   | Seq.Cons ((Lexer.Keyword Lexer.Keyword.Fillup, _), _) 

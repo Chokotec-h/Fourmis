@@ -1,22 +1,72 @@
 debut:
   Goto label_1
 label_1:
-  Goto label_4
+  Sense Ahead label_4 label_5 Friend
 label_4:
-  Sense Ahead label_6 label_5 HoleAbove
-label_5:
-  DigUp label_8
-  Goto label_8
-label_8:
-  Goto label_7
+  Move label_6
+  Goto label_6
 label_6:
-  MoveUp label_9
-  Goto label_9
+  Goto label_5
+label_5:
+  Sense LeftAhead label_8 label_9 Friend
+label_8:
+  Move label_11
+  Goto label_11
+label_11:
+  Goto label_10
 label_9:
-  MoveDown label_10
+  TurnLeft
   Goto label_10
 label_10:
-label_7:
+  Sense RightAhead label_13 label_14 Friend
+label_13:
+  Move label_16
+  Goto label_16
+label_16:
+  Goto label_15
+label_14:
+  TurnRight
+  Goto label_15
+label_15:
+  Sense Here label_18 label_19 Food
+label_18:
+  PickUp label_20
+  Goto label_20
+label_20:
+  Goto label_19
+label_19:
+  Sense Here label_22 label_23 Home
+label_22:
+  Drop
+  Goto label_23
+label_23:
+  Roll 20 label_25 label_26
+label_25:
+  TurnLeft
+  Goto label_26
+label_26:
+  Sense Ahead label_28 label_29 Rock
+label_28:
+  TurnLeft
+  Goto label_30
+label_29:
+  Sense Ahead label_32 label_33 Underground
+label_32:
+  Dig label_35
+  Goto label_35
+label_35:
+  Move label_36
+  Goto label_36
+label_36:
+  Goto label_34
+label_33:
+  Move label_37
+  Goto label_37
+label_37:
+  Goto label_34
+label_34:
+  Goto label_30
+label_30:
   Goto label_1
 label_2:
   Goto debut

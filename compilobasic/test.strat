@@ -1,12 +1,52 @@
 
 
 while (true) do {
-    if (!= ahead holeabove) then {
-        digup
+    ifs (= ahead friend) then
+    {
+        move
+    };
+    if (= leftahead friend) then
+    {
+        move
     }
     else
     {
-        moveup;
-        movedown
+        turn left
+    };
+    if (= rightahead friend) then
+    {
+        move
+    }
+    else
+    {
+        turn right
+    };
+
+
+
+    ifs (= here food) then
+    {
+        pickup
+    };
+    ifs (= here home) then
+    {
+        drop
+    };
+    ifs (random 20) then
+    {
+        turn left
+    };
+    if (= ahead rock) then {
+        turn left
+    }
+    else
+    {
+        if (= ahead underground) then {
+            dig;
+            move
+        }
+        else{
+            move
+        }
     }
 }

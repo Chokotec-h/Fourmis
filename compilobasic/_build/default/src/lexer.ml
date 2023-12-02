@@ -32,6 +32,7 @@ module Keyword = struct
     | Holebelow 
     | Home 
     | If 
+    | Ifs 
     | Left 
     | Leftahead 
     | Mark 
@@ -84,6 +85,7 @@ module Keyword = struct
     | Holebelow -> Printf.fprintf fmt "holebelow" 
     | Home -> Printf.fprintf fmt "home" 
     | If -> Printf.fprintf fmt "if" 
+    | Ifs -> Printf.fprintf fmt "ifs" 
     | Left -> Printf.fprintf fmt "left" 
     | Leftahead -> Printf.fprintf fmt "leftahead" 
     | Mark -> Printf.fprintf fmt "mark" 
@@ -181,6 +183,7 @@ let keyword_opt str =
   | "holebelow" -> Some (Keyword Keyword.Holebelow)
   | "home" -> Some (Keyword Keyword.Home)
   | "if" -> Some (Keyword Keyword.If)
+  | "ifs" -> Some (Keyword Keyword.Ifs)
   | "left" -> Some (Keyword Keyword.Left)
   | "leftahead" -> Some (Keyword Keyword.Leftahead)
   | "mark" -> Some (Keyword Keyword.Mark)

@@ -39,6 +39,7 @@ and expression =
   | PickElse of (expression Span.located list Span.located)
   | While of (condition Span.located) * (expression Span.located list Span.located)
   | If of (condition Span.located) * (expression Span.located list Span.located) * (expression Span.located list Span.located)
+  | Ifs of (condition Span.located) * (expression Span.located list Span.located)
 
 and lr = 
   | TurnL

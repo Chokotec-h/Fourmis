@@ -162,6 +162,10 @@ let comp_condition (cond: Ast.condition) (c: int) (oc: out_channel) : unit =
             fprintf oc "  Sense %s label_%d label_%d %s\n" (comp_direction direction) (c+1) (c) (comp_valeur valeur)
         | Ast.Random(p,_) ->
                         fprintf oc "  Roll %d label_%d label_%d\n" (p) (c) (c+1)
+        (*| Ast.And((cond1,_),(cond2,_)) ->
+            fprintf oc "  Sense %s label_%d label_%d %s\n" (comp_direction direction) (c) (c+1) (comp_valeur valeur);
+            fprintf oc "label_%d\n" ();
+            comp_condition cond2 *)
         | _ -> failwith "cas impossible"
 
 
@@ -228,22 +232,31 @@ let rec comp_expression (exp: Ast.expression) (oc: out_channel) : unit =
             fprintf oc "label_%d:\n" (c+3)
         | Ast.If((cond,_),(e_then,_),(e_else,_)) ->
             let c = !i in
-            fprintf oc "  Goto label_%d\n" (c+1);
-            (* on réserve [c+1] [c+2] [c+3] [c+4] pour notre boucle. les labels frais commencent à [c+5]*)
-            i := !i + 5; 
-            (* label de condition c+1*)
+            (* on réserve [c+1] [c+2] [c+3] pour notre if. les labels frais commencent à [c+4]*)
+            i := !i + 4; 
+            comp_condition cond (c+1) oc;
+            (* label de if c+1*)
             fprintf oc "label_%d:\n" (c+1);
-            comp_condition cond (c+2) oc;
-            (* label de if c+2*)
-            fprintf oc "label_%d:\n" (c+2);
             comp_many_expr e_then;
-            fprintf oc "  Goto label_%d\n" (c+4);
-            (* label de then c+3*)
-            fprintf oc "label_%d:\n" (c+3);
+            fprintf oc "  Goto label_%d\n" (c+3);
+            (* label de then c+2*)
+            fprintf oc "label_%d:\n" (c+2);
             comp_many_expr e_else;
-            fprintf oc "  Goto label_%d\n" (c+4);
-            (* label de then c+4*)
-            fprintf oc "label_%d:\n" (c+4)
+            fprintf oc "  Goto label_%d\n" (c+3);
+            (* label de sortie c+3*)
+            fprintf oc "label_%d:\n" (c+3)
+
+        | Ast.Ifs((cond,_),(e_then,_)) ->
+            let c = !i in
+            (* on réserve [c+1] [c+2] pour notre boucle. les labels frais commencent à [c+3]*)
+            i := !i + 3; 
+            comp_condition cond (c+1) oc;
+            (* label de if c+1*)
+            fprintf oc "label_%d:\n" (c+1);
+            comp_many_expr e_then;
+            fprintf oc "  Goto label_%d\n" (c+2);
+            (* label de sorti c+3*)
+            fprintf oc "label_%d:\n" (c+2)
 
 (* Compile un programme *)
 let comp_program (program: Ast.program) (oc: out_channel) : unit =

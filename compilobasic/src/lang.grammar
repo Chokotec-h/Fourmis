@@ -23,6 +23,7 @@ type expression =
 	| PickElse  		pickelse {<expression+;>}
 	| While				while (<condition>) do {<expression+;>}
 	| If				if (<condition>) then {<expression+;>} else {<expression+;>}
+	| Ifs 				ifs (<condition>) then {<expression+;>}
 
 type condition =
 	| Eq				= <direction> <valeur>
