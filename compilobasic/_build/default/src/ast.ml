@@ -38,6 +38,8 @@ and expression =
   | MoveElse of (expression Span.located list Span.located)
   | PickElse of (expression Span.located list Span.located)
   | While of (condition Span.located) * (expression Span.located list Span.located)
+  | If of (condition Span.located) * (expression Span.located list Span.located) * (expression Span.located list Span.located)
+  | Ifs of (condition Span.located) * (expression Span.located list Span.located)
 
 and lr = 
   | TurnL
@@ -96,6 +98,8 @@ and print_nt_expression indent t out =
   | MoveElse ((arg0, _)) -> Printf.fprintf out "moveelse { %t} " (non_empty_iter_print_nt_expression (Lexer.Operator ";") indent arg0) 
   | PickElse ((arg0, _)) -> Printf.fprintf out "pickelse { %t} " (non_empty_iter_print_nt_expression (Lexer.Operator ";") indent arg0) 
   | While ((arg0, _), (arg1, _)) -> Printf.fprintf out "while ( %t) do { %t} " (print_nt_condition indent arg0) (non_empty_iter_print_nt_expression (Lexer.Operator ";") indent arg1) 
+  | If ((arg0, _), (arg1, _), (arg2, _)) -> Printf.fprintf out "if ( %t) then { %t} else { %t} " (print_nt_condition indent arg0) (non_empty_iter_print_nt_expression (Lexer.Operator ";") indent arg1) (non_empty_iter_print_nt_expression (Lexer.Operator ";") indent arg2) 
+  | Ifs ((arg0, _), (arg1, _)) -> Printf.fprintf out "ifs ( %t) then { %t} " (print_nt_condition indent arg0) (non_empty_iter_print_nt_expression (Lexer.Operator ";") indent arg1) 
 
 and print_nt_condition indent t out = 
   match t with

@@ -1,15 +1,52 @@
-grab_ahead:
-    grab
 
-grab_left:
-    turnleft;
-    grab
-
-grab_right:
-    turnright;
-    grab
 
 while (true) do {
-    move;
-    sense ahead grab_ahead
+    ifs (= ahead friend) then
+    {
+        move
+    };
+    if (= leftahead friend) then
+    {
+        move
+    }
+    else
+    {
+        turn left
+    };
+    if (= rightahead friend) then
+    {
+        move
+    }
+    else
+    {
+        turn right
+    };
+
+
+
+    ifs (= here food) then
+    {
+        pickup
+    };
+    ifs (= here home) then
+    {
+        drop
+    };
+    ifs (random 20) then
+    {
+        turn left
+    };
+    if (= ahead rock) then {
+        turn left
+    }
+    else
+    {
+        if (= ahead underground) then {
+            dig;
+            move
+        }
+        else{
+            move
+        }
+    }
 }

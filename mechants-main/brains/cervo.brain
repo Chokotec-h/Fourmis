@@ -1,28 +1,32 @@
 debut:
   Goto label_1
 label_1:
-  Sense Here label_3 label_2 Surface
-label_2:
-  DigUp label_4
   Goto label_4
 label_4:
-  MoveUp label_5
-  Goto label_5
+  Sense Ahead label_5 label_6 Rock
 label_5:
-  Goto label_1
-label_3:
-  Goto label_7
-label_7:
-  Goto label_10
-label_10:
-  Roll 6 label_11 label_12
-label_11:
   TurnLeft
-  Goto label_10
-label_12:
-  Move label_13
+  Goto label_7
+label_6:
+  Goto label_9
+label_9:
+  Sense Ahead label_11 label_10 Underground
+label_10:
+  Dig label_13
   Goto label_13
 label_13:
+  Move label_14
+  Goto label_14
+label_14:
+  Goto label_12
+label_11:
+  Move label_15
+  Goto label_15
+label_15:
+  Goto label_12
+label_12:
   Goto label_7
-label_8:
+label_7:
+  Goto label_1
+label_2:
   Goto debut

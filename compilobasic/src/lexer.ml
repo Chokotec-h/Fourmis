@@ -13,6 +13,7 @@ module Keyword = struct
     | Digup 
     | Do 
     | Drop 
+    | Else 
     | Empty 
     | Enemy 
     | Enemyhome 
@@ -30,6 +31,8 @@ module Keyword = struct
     | Holeabove 
     | Holebelow 
     | Home 
+    | If 
+    | Ifs 
     | Left 
     | Leftahead 
     | Mark 
@@ -46,6 +49,7 @@ module Keyword = struct
     | Rightahead 
     | Rock 
     | Surface 
+    | Then 
     | True 
     | Turn 
     | Underground 
@@ -62,6 +66,7 @@ module Keyword = struct
     | Digup -> Printf.fprintf fmt "digup" 
     | Do -> Printf.fprintf fmt "do" 
     | Drop -> Printf.fprintf fmt "drop" 
+    | Else -> Printf.fprintf fmt "else" 
     | Empty -> Printf.fprintf fmt "empty" 
     | Enemy -> Printf.fprintf fmt "enemy" 
     | Enemyhome -> Printf.fprintf fmt "enemyhome" 
@@ -79,6 +84,8 @@ module Keyword = struct
     | Holeabove -> Printf.fprintf fmt "holeabove" 
     | Holebelow -> Printf.fprintf fmt "holebelow" 
     | Home -> Printf.fprintf fmt "home" 
+    | If -> Printf.fprintf fmt "if" 
+    | Ifs -> Printf.fprintf fmt "ifs" 
     | Left -> Printf.fprintf fmt "left" 
     | Leftahead -> Printf.fprintf fmt "leftahead" 
     | Mark -> Printf.fprintf fmt "mark" 
@@ -95,6 +102,7 @@ module Keyword = struct
     | Rightahead -> Printf.fprintf fmt "rightahead" 
     | Rock -> Printf.fprintf fmt "rock" 
     | Surface -> Printf.fprintf fmt "surface" 
+    | Then -> Printf.fprintf fmt "then" 
     | True -> Printf.fprintf fmt "true" 
     | Turn -> Printf.fprintf fmt "turn" 
     | Underground -> Printf.fprintf fmt "underground" 
@@ -156,6 +164,7 @@ let keyword_opt str =
   | "digup" -> Some (Keyword Keyword.Digup)
   | "do" -> Some (Keyword Keyword.Do)
   | "drop" -> Some (Keyword Keyword.Drop)
+  | "else" -> Some (Keyword Keyword.Else)
   | "empty" -> Some (Keyword Keyword.Empty)
   | "enemy" -> Some (Keyword Keyword.Enemy)
   | "enemyhome" -> Some (Keyword Keyword.Enemyhome)
@@ -173,6 +182,8 @@ let keyword_opt str =
   | "holeabove" -> Some (Keyword Keyword.Holeabove)
   | "holebelow" -> Some (Keyword Keyword.Holebelow)
   | "home" -> Some (Keyword Keyword.Home)
+  | "if" -> Some (Keyword Keyword.If)
+  | "ifs" -> Some (Keyword Keyword.Ifs)
   | "left" -> Some (Keyword Keyword.Left)
   | "leftahead" -> Some (Keyword Keyword.Leftahead)
   | "mark" -> Some (Keyword Keyword.Mark)
@@ -189,6 +200,7 @@ let keyword_opt str =
   | "rightahead" -> Some (Keyword Keyword.Rightahead)
   | "rock" -> Some (Keyword Keyword.Rock)
   | "surface" -> Some (Keyword Keyword.Surface)
+  | "then" -> Some (Keyword Keyword.Then)
   | "true" -> Some (Keyword Keyword.True)
   | "turn" -> Some (Keyword Keyword.Turn)
   | "underground" -> Some (Keyword Keyword.Underground)
