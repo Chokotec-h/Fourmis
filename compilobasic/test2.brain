@@ -12,7 +12,9 @@ loop:
     Sense Ahead carry seek Food
 
 move:
-    Sense Ahead step uturn Empty
+    Sense Ahead dig uturn Empty
+dig:
+    Dig step
 step:
     Move loop
     Goto loop

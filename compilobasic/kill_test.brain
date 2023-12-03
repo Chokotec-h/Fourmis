@@ -1,0 +1,27 @@
+start:
+	Sense Ahead left top Enemy
+
+left:
+	Grab error_left
+	Goto nop
+
+error_left:
+	TurnRight
+	Goto move
+
+move:
+	Move move
+	Goto move
+
+top:
+	TurnRight
+	Attack error_top
+	Move move
+	Goto nop
+
+error_top:
+	TurnLeft
+	Goto move
+
+nop: 
+	Goto nop

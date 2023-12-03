@@ -1,158 +1,93 @@
 debut:
-  Goto label_1
-label_1:
-  Sense LeftAhead label_4 label_5 Friend
+  DigUp label_0
+  Goto label_0
+label_0:
+  Sense Ahead label_2 label_3 Friend
+label_2:
+  MoveUp label_4
+  Goto label_4
 label_4:
-  Move label_7
+  Goto label_3
+label_3:
+  Sense Ahead label_6 label_7 Friend
+label_6:
+  MoveDown label_8
+  Goto label_8
+label_8:
   Goto label_7
 label_7:
-  TurnLeft
-  Goto label_6
-label_5:
-  Sense RightAhead label_9 label_10 Friend
-label_9:
-  Move label_11
-  Goto label_11
-label_11:
-  TurnRight
   Goto label_10
 label_10:
-  Goto label_6
-label_6:
-  Sense Ahead label_13 label_14 Marker 0
+  Sense LeftAhead label_13 label_14 Friend
 label_13:
-  Move label_16
-  Goto label_16
-label_16:
-  Goto label_15
-label_14:
-  TurnLeft
-  Goto label_15
-label_15:
-  Sense Ahead label_18 label_19 Marker 0
-label_18:
-  Move label_21
-  Goto label_21
-label_21:
-  Goto label_20
+  Sense Ahead label_18 label_17 Empty
+label_17:
+  Dig label_19
+  Goto label_19
 label_19:
-  TurnLeft
+  Goto label_18
+label_18:
+  Move label_20
   Goto label_20
 label_20:
-  Sense Ahead label_23 label_24 Marker 0
-label_23:
-  Move label_26
-  Goto label_26
+  Goto label_15
+label_14:
+  Sense RightAhead label_22 label_23 Friend
+label_22:
+  Sense Ahead label_27 label_26 Empty
 label_26:
-  Goto label_25
-label_24:
-  TurnLeft
-  Goto label_25
-label_25:
-  Sense Ahead label_28 label_29 Marker 0
+  Dig label_28
+  Goto label_28
 label_28:
-  Move label_31
-  Goto label_31
-label_31:
-  Goto label_30
+  Goto label_27
+label_27:
+  Move label_29
+  Goto label_29
 label_29:
-  TurnLeft
-  Goto label_30
-label_30:
-  Sense Ahead label_33 label_34 Marker 0
-label_33:
-  Move label_36
-  Goto label_36
-label_36:
-  Goto label_35
+  Goto label_24
+label_23:
+  Sense Ahead label_31 label_32 Rock
+label_31:
+  Sense LeftAhead label_35 label_34 Rock
 label_34:
   TurnLeft
-  Goto label_35
-label_35:
-  Sense Ahead label_38 label_39 Marker 0
+  Sense Ahead label_39 label_38 Empty
 label_38:
+  Dig label_40
+  Goto label_40
+label_40:
+  Goto label_39
+label_39:
   Move label_41
   Goto label_41
 label_41:
-  Goto label_40
-label_39:
-  TurnLeft
-  Goto label_40
-label_40:
-  Sense Ahead label_43 label_44 Marker 0
+  TurnRight
+  Goto label_36
+label_35:
+  Sense RightAhead label_44 label_43 Rock
 label_43:
-  Move label_46
-  Goto label_46
+  TurnRight
+  Sense Ahead label_47 label_46 Empty
 label_46:
-  Goto label_45
-label_44:
-  TurnLeft
-  Goto label_45
-label_45:
-  Sense Ahead label_48 label_49 Marker 0
+  Dig label_48
+  Goto label_48
 label_48:
-  Move label_51
-  Goto label_51
-label_51:
-  Goto label_50
+  Goto label_47
+label_47:
+  Move label_49
+  Goto label_49
 label_49:
   TurnLeft
-  Goto label_50
-label_50:
-  Sense Ahead label_53 label_54 Marker 0
-label_53:
-  Move label_56
-  Goto label_56
-label_56:
-  Goto label_55
-label_54:
-  TurnLeft
-  Goto label_55
-label_55:
-  Sense Here label_58 label_59 Food
-label_58:
-  Sense Here label_62 label_61 Home
-label_61:
-  PickUp label_63
-  Goto label_63
-label_63:
-  Goto label_62
-label_62:
-  Goto label_59
-label_59:
-  Sense Here label_65 label_66 Home
-label_65:
-  Drop
-  Goto label_66
-label_66:
-  Roll 5 label_68 label_69
-label_68:
-  TurnLeft
-  Goto label_69
-label_69:
-  Sense Ahead label_71 label_72 Rock
-label_71:
-  TurnLeft
-  Goto label_73
-label_72:
-  Sense Ahead label_75 label_76 Underground
-label_75:
-  Dig label_78
-  Goto label_78
-label_78:
-  Move label_79
-  Goto label_79
-label_79:
-  Goto label_77
-label_76:
-  Move label_80
-  Goto label_80
-label_80:
-  Goto label_77
-label_77:
-  Goto label_73
-label_73:
-  Mark 0
-  Goto label_1
-label_2:
+  Goto label_44
+label_44:
+  Goto label_36
+label_36:
+  Goto label_32
+label_32:
+  Goto label_24
+label_24:
+  Goto label_15
+label_15:
+  Goto label_10
+label_11:
   Goto debut

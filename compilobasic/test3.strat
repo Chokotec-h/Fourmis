@@ -1,0 +1,46 @@
+digup;
+ifs (= ahead friend) then {
+    moveup
+};
+ifs (= ahead friend) then {
+    movedown
+};
+while (true) do {
+    if (= leftahead friend) then {
+        ifs (!= ahead empty) then {
+            dig
+        };
+        move
+    }
+    else {
+        if (= rightahead friend) then {
+            ifs (!= ahead empty) then {
+                dig
+            };
+            move
+        }
+        else {
+            ifs (= ahead rock) then {
+                if (!= leftahead rock) then {
+                    turn left;
+                    ifs (!= ahead empty) then {
+                        dig
+                    };
+                    move;
+                    turn right
+                }
+                else {
+                    ifs (!= rightahead rock) then {
+                        turn right;
+                        ifs (!= ahead empty) then {
+                            dig
+                        };
+                        move;
+                        turn left
+                    }
+                }
+            }
+        }
+        
+    }
+}
